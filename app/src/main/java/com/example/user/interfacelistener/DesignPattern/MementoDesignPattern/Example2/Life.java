@@ -1,0 +1,26 @@
+package com.example.user.interfacelistener.DesignPattern.MementoDesignPattern.Example2;
+
+import com.example.user.interfacelistener.DesignPattern.MementoDesignPattern.Memento;
+
+public class Life {
+
+    private String time;
+
+    public void set(String time)
+    {
+        System.out.println("Setting time to " + time);
+        this.time = time;
+    }
+
+    public Memento saveToMemento()
+    {
+        System.out.println("Saving time to Memento");
+        return new Memento(time);
+    }
+
+    public void restoreFromMemento(Memento memento)
+    {
+        time = memento.getState();
+        System.out.println("Time restored from Memento: " + time);
+    }
+}
